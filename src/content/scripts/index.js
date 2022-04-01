@@ -1,4 +1,4 @@
-import Test from './components/Test.svelte';
+import Carousel from './components/Carousel.svelte';
 
 function registerComponent (component, name) {
   document.querySelectorAll(`.${CSS.escape(name)}`).forEach($el => {
@@ -11,4 +11,4 @@ function registerComponent (component, name) {
   })
 }
 
-registerComponent(Test, 'svelte--Test.svelte');
+registerComponent(Carousel, 'svelte--Carousel.svelte');

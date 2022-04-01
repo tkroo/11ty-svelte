@@ -1,6 +1,12 @@
 const svelte = require('./src/shortcodes/svelte');
 
 module.exports = function (config) {
+  
+  config.addPassthroughCopy({
+    "src/_assets/css": "css",
+    "src/_assets/images": "images",
+  });
+
   config.addNunjucksAsyncShortcode('svelte', svelte);
 
   config.addWatchTarget('src/content/scripts/**/*.(js|svelte)')
@@ -11,5 +17,6 @@ module.exports = function (config) {
       output: 'dist',
     },
     htmlTemplateEngine: 'njk',
+    passthroughFileCopy: true
   };
 };

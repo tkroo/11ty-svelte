@@ -3,24 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/carousel.css">
     <title>Document</title>
     <style>
       body {
         font-family: sans-serif;
+        width: 100%;
       }
 
-      .components {
-        display: grid;
-        gap: 0.5rem;
+      main {
+        max-width: 1200px;
+        margin: 1rem auto;
       }
     </style>
   </head>
   <body>
     <main>
       <h1>Svelte x 11ty</h1>
-      <div class="components">
-        {% svelte "Test.svelte", { name: 'not Etienne' } %}
-        {% svelte "Test.svelte", { name: 'Etienne' } %}
+      <div class="auto-grid">
+        {% svelte "Carousel.svelte", { images: '/images/1.png,/images/2.png,/images/3.png' } %}
+        {% svelte "Carousel.svelte", { images: '/images/4.png,/images/5.png,/images/6.png' } %}
+        {% svelte "Carousel.svelte", { images: '/images/7.png,/images/8.png,/images/9.png' } %}
+        {% svelte "Carousel.svelte", { images: '/images/1.png,/images/2.png,/images/3.png,/images/4.png,/images/5.png' } %}
       </div>
     </main>
     <script async defer src="scripts/index.js"></script>
