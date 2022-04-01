@@ -12,9 +12,11 @@ module.exports = async function svelteShortcode(filename, props) {
         input,
         plugins: [
           svelte({
+            compilerOptions: {
             generate: 'ssr',
             hydratable: true,
             css: false,
+            }
           }),
         ],
         external: [/^svelte/],
